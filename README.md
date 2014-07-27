@@ -6,7 +6,8 @@ It's a perl port of [zenbutsu/serf-munin](https://github.com/zembutsu/serf-munin
 
 ## See Also
 
-- [zenbutsu/serf-munin](https://github.com/zembutsu/serf-munin)
+- Demo: https://www.youtube.com/watch?v=RomYvsZCW5c
+- Origin: [zenbutsu/serf-munin](https://github.com/zembutsu/serf-munin)
 
 ## Author
 
