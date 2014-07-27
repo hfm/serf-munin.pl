@@ -1,3 +1,5 @@
+### https://raw.github.com/github/gitignore/170b9f808b34c9df63cbefb50c6b3517270755ec/perl.gitignore
+
 /blib/
 /.build/
 _build/
@@ -17,3 +19,20 @@ nytprof.out
 /pm_to_blib
 *.o
 *.bs
+
+
+### https://raw.github.com/github/gitignore/170b9f808b34c9df63cbefb50c6b3517270755ec/Global/osx.gitignore
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
