@@ -8,8 +8,8 @@ my ($hostname, $address, $role, $tags) = split(/\t/, <STDIN>);
 my $event = $ENV{SERF_EVENT};
 my $file  = "/etc/munin/conf.d/${hostname}.conf";
 
-my @tag_groups  = split(/,/, $tags);
-my ($group) =  map /^munin_group=(.+)/, @tags_group or die 'unknown tag';
+my @tags_group = split(/,/, $tags);
+my ($group) = map /^munin_group=(.+)/, @tags_group or die 'unknown tag';
 $group =~ s/^munin_group=//;
 chomp $group;
 
