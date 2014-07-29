@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Fcntl qw(:flock);
 
-my ($name, $address, $role, $tags) = split("\t", <STDIN>);
+my ($name, $address, undef, $tags) = split("\t", <STDIN>);
 my $event = $ENV{SERF_EVENT};
 my $file  = "/etc/munin/conf.d/${name}.conf";
 
