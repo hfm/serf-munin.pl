@@ -4,9 +4,9 @@ use strict;
 use warnings;
 use Fcntl qw(:flock);
 
-my ($hostname, $address, $role, $tags) = split(/\t/, <STDIN>);
+my ($name, $address, $role, $tags) = split("\t", <STDIN>);
 my $event = $ENV{SERF_EVENT};
-my $file  = "/etc/munin/conf.d/${hostname}.conf";
+my $file  = "/etc/munin/conf.d/${name}.conf";
 
 chomp $tags;
 my @tags_group = split(/,/, $tags);
@@ -18,7 +18,7 @@ if ($event eq 'member-join') {
     flock($fh, LOCK_EX);
 
     print $fh <<CONF;
-[${group};${hostname}]
+[${group};${name}]
     address ${address}
     use_node_name yes
 CONF
