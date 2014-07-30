@@ -4,7 +4,10 @@ use strict;
 use warnings;
 use Fcntl qw(:flock);
 
-my ($name, $address, undef, $tags) = split("\t", <STDIN>);
+my @member_fields = split("\t", <STDIN>);
+die "fields must include 4 elements" unless @member_fields == 4;
+my ($name, $address, undef, $tags) = @member_fields;
+
 my $event = $ENV{SERF_EVENT};
 my $file  = "/etc/munin/conf.d/${name}.conf";
 
