@@ -13,7 +13,7 @@ my $file  = "/etc/munin/conf.d/${name}.conf";
 
 chomp $tags;
 my @tags_group = split(/,/, $tags);
-my ($group) = map /^munin_group=(.+)/, @tags_group or die 'unknown tag';
+my ($group) = map /^munin_group=(.+)/, @tags_group or die 'munin_group is nowhere';
 $group =~ s/^munin_group=//;
 
 if ($event eq 'member-join') {
