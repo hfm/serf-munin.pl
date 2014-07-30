@@ -16,7 +16,10 @@ my @tags_group = split(/,/, $tags);
 my ($group) = map /^munin_group=(.+)/, @tags_group or die 'munin_group is nowhere';
 $group =~ s/^munin_group=//;
 
-if ($event eq 'member-join') {
+if (
+    $event eq 'member-join' ||
+    $event eq 'member-update'
+) {
     open my $fh, "> ${file}" or die $!;
     flock($fh, LOCK_EX);
 
