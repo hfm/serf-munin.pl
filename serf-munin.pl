@@ -33,10 +33,7 @@ CONF
         flock($fh, LOCK_UN);
         close $fh;
     }
-    elsif (
-        $event eq 'member-leave' ||
-        $event eq 'member-failed'
-    ) {
+    elsif ( $event eq 'member-leave' ) {
         unlink $file;
     }
 }
