@@ -6,7 +6,7 @@ use Fcntl qw(:flock);
 
 while (<STDIN>) {
     chomp;
-    my @member_fields = split("\t", $_);
+    my @member_fields = split("\t", $_, -1);
     die "fields must include 4 elements" unless @member_fields == 4;
     my ($name, $address, undef, $tags) = @member_fields;
 
@@ -33,10 +33,7 @@ CONF
         flock($fh, LOCK_UN);
         close $fh;
     }
-    elsif (
-        $event eq 'member-leave' ||
-        $event eq 'member-failed'
-    ) {
+    elsif ( $event eq 'member-leave' ) {
         unlink $file;
     }
 }
