@@ -37,3 +37,35 @@ CONF
         unlink $file;
     }
 }
+
+__END__
+
+=head1 NAME
+
+serf-munin.pl
+
+=head1 SYNOPSIS
+
+This serf event-handler automatically generates config files of munin-node.
+
+=head1 REQUIREMENT
+
+=over 3
+
+=item 1. serf
+
+=item 2. munin_group tag of serf
+
+=back
+
+=head1 Sample tag
+
+=begin text
+
+    {
+      "tags": {
+        "munin_group": "app"
+      }
+    }
+
+=end text
